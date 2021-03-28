@@ -1,0 +1,38 @@
+package assign;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class ParentView {
+
+	public static void main(String[] args) {
+		ArrayList<Parent> pv = new ArrayList<Parent>();
+		Parent p1 = new Parent(15151102, "Soundarya", "Raveendran", "Deeparani");
+		Parent p2 = new Parent(15151095, "Singaram", "Ram", "Sahana");
+		Parent p3 = new Parent(15151086, "Prakash", "Mohan", "Priya");
+
+		pv.add(p1);
+		pv.add(p2);
+		pv.add(p3);
+
+		Collections.sort(pv, new ParentViewIDCompare());
+		for (Parent v : pv) {
+			System.out.println("Student ID: " + v.Student_ID + " " + "Student Name: " + v.StudentName + "  "
+					+ v.StudentName + "'s_" + "Father_Name: " + v.Father_Name + "  " 
+					+ v.StudentName + "'s_"+ "Mother_Name: " + v.Mother_Name);
+		}
+	}
+}
+
+class Parent {
+	String StudentName, Father_Name, Mother_Name;
+	int Student_ID;
+
+	public Parent(int student_ID, String studentName, String father_Name, String mother_Name) {
+		super();
+		this.Student_ID = student_ID;
+		this.StudentName = studentName;
+		this.Father_Name = father_Name;
+		this.Mother_Name = mother_Name;
+	}
+}

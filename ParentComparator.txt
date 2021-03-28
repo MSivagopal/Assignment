@@ -1,0 +1,19 @@
+package assign;
+
+import java.util.Comparator;
+
+public class ParentViewIDCompare implements Comparator<Parent> {
+	public int compare(Parent p1, Parent p2) {
+		Parent sc1 = (Parent) p1;
+		Parent sc2 = (Parent) p2;
+
+		if (sc1.Student_ID == sc2.Student_ID) {
+			return 0;
+		} else if (sc1.Student_ID > sc2.Student_ID) {
+			return 1;
+		} else {
+			return -1;
+		}
+
+	}
+}
